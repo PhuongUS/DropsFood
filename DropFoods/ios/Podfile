@@ -1,0 +1,35 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DropFoods' do
+  pod 'Stripe', '~> 14.0.0'
+  inherit! :search_paths
+
+  pod 'yoga', path: '../node_modules/react-native/ReactCommon/yoga/'
+    pod 'React', path: '../node_modules/react-native/', :subspecs => [
+    'Core',
+    'ART',
+    'RCTActionSheet',
+    'RCTAnimation',
+    'RCTLinkingIOS',
+    'RCTGeolocation',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTText',
+    'RCTVibration',
+    'RCTWebSocket',
+    'DevSupport',
+    'CxxBridge',
+    ]
+    
+    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+    pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+    
+    pod 'RNCharts', :path => '../node_modules/react-native-charts-wrapper'
+    # pre_install do |installer|
+    #     installer.analysis_result.specifications.each do |s|
+    #         s.swift_version = '5.0' unless s.swift_version
+    #     end
+    # end
+end
